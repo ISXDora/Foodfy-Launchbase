@@ -106,22 +106,47 @@ footer small {
     line-height:16px;
 }
 /*====Modal-overlay=====*/
-.modal-overlay.active{
+.modal-overlay{
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.7);
     top: 0;
     position: fixed;
+    opacity: 0;
+    visibility: hidden;
 }
 .modal {
 
     position:relative;
     width: 660px;
-    height:413px;
+    height:400px;
     background: #FFFFFF;
     opacity: 1;
     border-radius: 16px;
     margin: 25vh auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    
+}
+.modal a {
+display: block;
+text-align: center;
+position: absolute;
+bottom:30px;
+cursor: pointer;
+}
+
+.modal-content {
+   margin-top: 0;
+   width: 100%;
+   height: 90%;
+   position: absolute;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 
