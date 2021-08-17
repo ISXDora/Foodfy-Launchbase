@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodfy</title>
-    <link rel="stylesheet" href="/style.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="/assets/logo.png" alt="logotipo Foodfy">
-        </div>
-        <div class="menu">
-            <a href="/about.html">Sobre</a>
-            <a href="/recipes.html">Receitas</a>
-        </div>                                                                                                                         
-    </header>
+{% extends "layout.html" %}
+{% block content %}
     <section class="recipes-box">
         <div class="recipes">
             <div class="recipe-content" id="burger.png">
@@ -99,11 +79,12 @@
         
 
     </section>
-    <footer>
-        <small>Todos os direitos reservados, receitas Foodfy</small>
-
-    </footer>
-    <div class="modal-overlay">
+   {% endblock %}
+   <!-- 
+   
+AQUI JAZ UM MODAL
+   
+   <div class="modal-overlay">
         <div class="modal">
             <div class="modal-content">
                 <div class="modal-recipe">
@@ -116,5 +97,4 @@
         </div>
     </div>
     <script src="/scripts.js"></script>   
-</body>
-</html>
+-->

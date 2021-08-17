@@ -19,5 +19,11 @@ server.use(express.static('public'));
 
 
 server.get('/', (req,res) =>{
-    res.render('index')
+   return  res.render('index')
 })
+server.get('/about.html', (req,res) =>{
+    return  res.render('about')
+ })
+ server.get('/recipes.html', (req,res) =>{
+    return  res.render('recipes')
+ })
