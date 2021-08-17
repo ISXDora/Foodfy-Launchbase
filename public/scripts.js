@@ -1,8 +1,10 @@
 const modalOverlay = document.querySelector('.modal-overlay');
 const recipes = document.querySelectorAll('.recipe-content');
 const modal = document.querySelector('.modal');
+const itemMenu = document.querySelector('.menu');
+const item = itemMenu.querySelector('a');
 
-for (let recipe of recipes){
+/*for (let recipe of recipes){
     recipe.addEventListener("click", function(){
         const imgId = recipe.getAttribute("id");
         const tituloModal = recipe.querySelector("h3").textContent;
@@ -13,12 +15,17 @@ for (let recipe of recipes){
         modalOverlay.querySelector('p').textContent = `${autorModal}`
 
     })
-}
+}*/
 
 
-document.querySelector('.close-modal').addEventListener("click", function(){
+/*document.querySelector('.close-modal').addEventListener("click", function(){
     modalOverlay.classList.remove('active')
     modalOverlay.querySelector('img').src =""
-})
+})*/
+
+
+
+
+
 
 
