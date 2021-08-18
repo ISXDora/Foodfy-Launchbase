@@ -190,3 +190,9 @@ text-align: center;
     font-size:18px;
     line-height:28px;
 }
+/*=====================PAGE RECIPE DETAILS=============================*/
+
+.recipe-details-content img {
+    max-width: 940px;
+    height: 280px;
+}
