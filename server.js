@@ -30,4 +30,27 @@ server.get('/about', (req,res) =>{
  })
 
 
- 
+ /* server.get("/courses/:id", function(req, res) {
+    const id = req.params.id;
+    const post = posts.find(function(post){
+        console.log(post, id)
+         if(post.id == id){
+            return true
+        }
+        if(!post) {
+            return res.send("Post not found")
+        }
+    })
+
+    return res.render("post", {post})
+}) */
+
+
+ server.get("/recipes/:index", function (req, res) {
+    const recipe = [ require("./data.js")
+        
+    ]; // Array de receitas carregadas do data.js
+    const recipeIndex = req.params.index;
+  
+    console.log(recipes[recipeIndex]);
+  })
