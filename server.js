@@ -33,7 +33,8 @@ server.get('/about', (req,res) =>{
     
     const indexRecipe = req.params.index
     const recipe = recipes
-    recipe[indexRecipe.replace(":","")]
-    return res.render("recipe", {items: recipes})
+    console.log(recipe[indexRecipe.replace(":","")])
+
+    return res.render("recipe", {items: recipe[indexRecipe.replace(":", "")]})
     
 })
