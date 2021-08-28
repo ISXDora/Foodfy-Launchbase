@@ -191,8 +191,26 @@ text-align: center;
     line-height:28px;
 }
 /*=====================PAGE RECIPE DETAILS=============================*/
-
+.recipe-details-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
 .recipe-details-content img {
     max-width: 940px;
     height: 280px;
+    border-radius: 15px;
+    margin: 20px auto 50px;
+}
+
+.recipe-details-content h3 {
+    font: bold 36px 'Roboto', sans-serif;
+    color: #111111;
+    line-height: 42px;
+}
+.recipe-details-content p {
+    font: 400 20px 'Roboto', sans-serif;
+    color: #777777;
+    line-height: 24px;
 }

@@ -12,7 +12,14 @@ for (let i = 0; i < recipes.length; ++i){
     })
 }
 
-    
+const detailsIngredients = document.querySelector('.details-ingredients-content');
+console.log(detailsIngredients)
+
+
+
+
+
+
         
 
         

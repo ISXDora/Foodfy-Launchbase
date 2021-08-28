@@ -2,8 +2,26 @@
 
 {% block content %}
   <div class="recipe-details-content">
-                    <img src="{{items.image}}">
-                    <h3>{{items.title}}</h3>
-                    <p>{{items.author}}</p>
+      <img src="{{items.image}}">
+      <h3>{{items.title}}</h3>
+      <p>{{items.author}}</p>
  </div>
+<section class="recipe-details">
+  <div class="details-ingredients">
+    <h4>Ingredientes</h4>
+    <div class="details-ingredients-content"></div>
+  </div>
+  <div class="details-preparation">
+    <h4>Modo de preparo </h4>
+    <div class="details-preparation-content"></div>
+
+
+  </div>
+  <div class="details-information">
+    <h4>Informações adicionais</h4>
+    <div class="details-information-content"></div>
+
+  </div>
+
+</section>
 {% endblock %}
