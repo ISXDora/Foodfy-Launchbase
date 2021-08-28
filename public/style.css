@@ -213,6 +213,7 @@ text-align: center;
     font: 400 20px 'Roboto', sans-serif;
     color: #777777;
     line-height: 24px;
+    margin-bottom: 50px;
 }
 section.recipe-details{
     max-width: 940px;
@@ -222,12 +223,12 @@ section.recipe-details{
     font: bold 24px 'Roboto', sans-serif;
     line-height: 28px;
     color: #111111;
+    margin-bottom: 20px;
 }
 .details-ingredients,
 .details-preparation,
 .details-information {
     align-items: left;
-    margin: 20px auto 39px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -244,7 +245,40 @@ section.recipe-details{
     line-height:14px;
     color: #999999;
     position: absolute;
-    display: inline-flex;
-    margin-left: 200px;
+    display: inline-block;
+    margin: 10px 0 0 8px;
     
+}
+
+.details-ingredients-content {
+    max-width: 940px;
+    margin: 0 17px 39px;
+    line-height:28px;
+}
+.details-ingredients-content li {
+    font: 400 18px 'Roboto', sans-serif;
+    color: #444444;
+}
+
+/*xxxxxxxxxxxxxxxx Modo de Preparo xxxxxxxxxxxxxxxxxxxx*/
+.details-preparation-content {
+    margin-bottom: 39px;
+}
+.details-preparation-content li{
+    list-style: none;
+    font: 400 18px 'Roboto', sans-serif;
+    color: #444444;
+    line-height: 28px;
+}
+
+/*xxxxxxxxxxxxxxxx Informaçõe adicionais xxxxxxxxxxxxxxxxxxxx*/
+
+.details-information li {
+
+    list-style: none;
+    font: 400 18px 'Roboto', sans-serif;
+    color: #444444;
+    line-height: 28px;
+    margin-bottom: 30px;
+    text-align: justify;
 }

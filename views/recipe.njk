@@ -8,10 +8,11 @@
  </div>
 <section class="recipe-details">
   <div class="details-ingredients">
-    <h4 class="recipe-title">Ingredientes</h4>
-    <input class="togle-button" type="button" value="MOSTRAR">
-    
-    <div class="details-ingredients-content">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Ingredientes</h4>
+      <input class="togle-button" type="button" value="ESCONDER">
+    </div>  
+    <div class="details-ingredients-content" >
       
       <ul>
         {% for item in items.ingredients %} 
@@ -23,21 +24,30 @@
     
   </div>
   <div class="details-preparation">
-    <h4 class="recipe-title">Modo de preparo </h4>
-    <input class="togle-button" type="button" value="MOSTRAR">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Modo de preparo </h4>
+      <input class="togle-button" type="button" value="ESCONDER">
+    </div>
+    
     <div class="details-preparation-content">
-      {% for item in items.preparation %} 
-        <p>{{item}}<p>
-      {% endfor%}
+       <ul>
+        {% for item in items.preparation %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>
     </div>
   </div>
   <div class="details-information">
-    <h4 class="recipe-title">Informações adicionais</h4>
-    <input class="togle-button" type="button" value="MOSTRAR">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Informações adicionais</h4>
+      <input class="togle-button" type="button" value="ESCONDER">
+    </div>
     <div class="details-information-content">
-      
-        <p>{{items.information}}<p>
-      
+       <ul>
+        {% for item in items.information %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>     
     </div>
 
   </div>
