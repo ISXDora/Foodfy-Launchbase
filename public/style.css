@@ -214,3 +214,37 @@ text-align: center;
     color: #777777;
     line-height: 24px;
 }
+section.recipe-details{
+    max-width: 940px;
+    margin: 0 auto;
+}
+.recipe-title {
+    font: bold 24px 'Roboto', sans-serif;
+    line-height: 28px;
+    color: #111111;
+}
+.details-ingredients,
+.details-preparation,
+.details-information {
+    align-items: left;
+    margin: 20px auto 39px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.details-ingredients h4,
+.details-preparation h4,
+.details-information h4 {
+    display: inline-flex;
+}
+.togle-button {
+    border: none;
+    background: none;
+    font: bold 12px 'Roboto', sans-serif;
+    line-height:14px;
+    color: #999999;
+    position: absolute;
+    display: inline-flex;
+    margin-left: 200px;
+    
+}

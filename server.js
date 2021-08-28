@@ -38,3 +38,4 @@ server.get('/about', (req,res) =>{
     return res.render("recipe", {items: recipe[indexRecipe.replace(":", "")]})
     
 })
+
