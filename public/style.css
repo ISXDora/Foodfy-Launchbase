@@ -95,7 +95,7 @@ header a {
 
 
 footer {
-    margin-top: 50px;
+    margin-top: 100px;
     background: #EEEEEE;
     bottom:0;
     width: 100%;
@@ -263,6 +263,7 @@ section.recipe-details{
 /*xxxxxxxxxxxxxxxx Modo de Preparo xxxxxxxxxxxxxxxxxxxx*/
 .details-preparation-content {
     margin-bottom: 39px;
+    
 }
 .details-preparation-content li{
     list-style: none;
@@ -272,6 +273,9 @@ section.recipe-details{
 }
 
 /*xxxxxxxxxxxxxxxx Informaçõe adicionais xxxxxxxxxxxxxxxxxxxx*/
+.deatils-information-content {
+    visibility: hidden;
+}
 
 .details-information li {
 
@@ -281,4 +285,11 @@ section.recipe-details{
     line-height: 28px;
     margin-bottom: 30px;
     text-align: justify;
+}
+/*==================== active (MOSTRAR | ESCONDER)=======================*/
+
+.active{
+    display: none;
+    margin-bottom: 39px;
+
 }

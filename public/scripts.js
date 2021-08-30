@@ -12,6 +12,19 @@ for (let i = 0; i < recipes.length; ++i){
     })
 }
 
+const handleTogle = document.querySelectorAll('.togle-button');
+
+for(let position of handleTogle){
+    position.addEventListener("click", function(){
+        if (position.value === 'ESCONDER'){
+            position.value = 'MOSTRAR'
+        }else {
+            position.value = 'ESCONDER'
+        }
+        position.parentElement.nextElementSibling.classList.toggle('active')
+    })
+}
+
 
 
 
