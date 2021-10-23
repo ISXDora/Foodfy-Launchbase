@@ -18,24 +18,3 @@ nunjucks.configure('views', {
 
 
 server.use(express.static('public'));
-
-
-server.get('/', (req,res) =>{
-   return  res.render('index', { items: recipes })
-})
-server.get('/about', (req,res) =>{
-    return  res.render('about')
- })
- server.get('/recipes', (req,res) =>{
-    return  res.render('recipes', {items: recipes})
- })
- server.get('/recipes/:index', (req,res) =>{
-    
-    const indexRecipe = req.params.index
-    const recipe = recipes
-    console.log(recipe[indexRecipe.replace(":","")])
-
-    return res.render("recipe", {items: recipe[indexRecipe.replace(":", "")]})
-    
-})
-

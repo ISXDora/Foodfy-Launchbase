@@ -26,6 +26,24 @@ for(let position of handleTogle){
 }
 
 
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("header .menu a")
+
+for (item of menuItems){
+    if(currentPage.includes(item.getAttribute("href"))){
+        item.classList.add("bold")
+        console.log(currentPage)
+        console.log(item)
+    }
+}
+
+
+const redirectPage = document.querySelector("header .logo img")
+redirectPage.addEventListener("click", function(){
+    
+    window.location.href= `/`
+})
+
 
 
 
