@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <section class="recipes-box">
+        
+        <div class="recipes">
+              {% for item in items %}
+              <div class="recipe-content">
+                <img src="{{item.image}}">
+                <h3 >{{item.title}}</h3>
+                <p >{{item.author}}</p>
+            </div>
+            {% endfor%}
+        </div>
+        <div class="recipes">
+              {% for item in items %}
+              <div class="recipe-content">
+                <img src="{{item.image}}">
+                <h3 >{{item.title}}</h3>
+                <p >{{item.author}}</p>
+            </div>
+            {% endfor%}
+        </div>
+        
+        
+
+    </section>
+   {% endblock %}
+   <!-- 
+   
+AQUI JAZ UM MODAL
+   
+   <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-recipe">
+                    <img src="">
+                    <h3>Asinhas de frango ao barbecue</h3>
+                    <p>por Vania Steroski</p>
+                </div>
+            </div>
+            <a  class="close-modal">Fechar modal</a>
+        </div>
+    </div>
+    <script src="/scripts.js"></script>   
+-->

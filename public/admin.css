@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #111111;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin-bottom: 50px;;
+}
+header .logo img{
+    margin-left:231px;
+    padding-top:27px;   
+}
+
+.main-text h1 {
+    margin: 0 0 30px 231px;;
+    font: bold 24px 'Roboto', sans-serif;
+}
+
+.recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 230px;
+}
+.recipe-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+.recipe-content img {
+    width: 172px;
+    height: 80px;
+    border-radius:8.57px;
+}

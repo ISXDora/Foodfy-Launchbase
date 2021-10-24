@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="recipe-details-content">
+      <img src="{{items.image}}">
+      <h3>{{items.title}}</h3>
+      <p>{{items.author}}</p>
+ </div>
+<section class="recipe-details">
+  <div class="details-ingredients">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Ingredientes</h4>
+      <input class="togle-button" type="button" value="ESCONDER">
+    </div>  
+    <div class="details-ingredients-content" >
+      
+      <ul>
+        {% for item in items.ingredients %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>
+      
+    </div>
+    
+  </div>
+  <div class="details-preparation">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Modo de preparo </h4>
+      <input class="togle-button" type="button" value="MOSTRAR">
+    </div>
+    
+    <div class="details-preparation-content active">
+       <ul>
+        {% for item in items.preparation %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>
+    </div>
+  </div>
+  <div class="details-information">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Informações adicionais</h4>
+      <input class="togle-button" type="button" value="ESCONDER">
+    </div>
+    <div class="details-information-content">
+       <ul>
+        {% for item in items.information %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>     
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}
