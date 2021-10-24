@@ -1,7 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
-const recipes = require('./data')
 const server = express();
+const routes = require('./routes')
 const port = 5000
 
 server.listen(port,() => {
@@ -18,3 +18,4 @@ nunjucks.configure('views', {
 
 
 server.use(express.static('public'));
+server.use(routes)
