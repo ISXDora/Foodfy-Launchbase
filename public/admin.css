@@ -9,16 +9,21 @@ header {
     width: 100%;
     height: 80px;
     display: flex;
-    margin-bottom: 50px;;
+    margin-bottom: 48px;;
 }
 header .logo img{
     margin-left:231px;
     padding-top:27px;   
 }
+.main-content {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 230px;
+}
 
 .main-text h1 {
-    margin: 0 0 30px 231px;;
     font: bold 24px 'Roboto', sans-serif;
+    margin-bottom: 30px;
 }
 
 .recipes {
@@ -37,4 +42,74 @@ header .logo img{
     width: 172px;
     height: 80px;
     border-radius:8.57px;
+}
+
+/*----------------------------------------- CREATE -----------------------------------------*/
+
+.main-text-form {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 30px;
+ 
+}
+.main-text-form h1 {
+    font: bold 24px 'Roboto', sans-serif;
+    color: #111111;
+    line-height: 28px;
+}
+.main-text-form button{
+    width:139px;
+    height: 37px;
+    background-color: #6558C3;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+
+    font: bold 16px 'Roboto', sans-serif;
+    line-height: 19px;
+    color: white;
+}
+
+
+/*----------------------------------------- FORM /FIELDS -----------------------------------------*/
+
+.form {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 230px;
+}
+
+.items {
+    width: 100%;
+    font: bold 16px 'Roboto', sans-serif;
+    line-height: 19px;
+}
+.items input {
+    width: 100%;
+    height: 49px;
+    border: solid 1px #DDDDDD;
+    border-radius: 4px;
+}
+.item {
+    margin-bottom: 30px;
+}
+
+.item div:nth-child(1){
+    margin-bottom: 10px;
+}
+.item div:nth-child(2) input::placeholder {
+    font-size: 16px;
+    padding:16px;
+}
+.item div:nth-child(2) input[type="textarea"]{
+    min-height: 257px;
+}
+.item button {
+    margin-top: 15px;
+    font: bold 16px 'Roboto', sans-serif;
+    line-height:19px;
+    color: #6558C3;
+    background: none;
+    border: none;
 }
