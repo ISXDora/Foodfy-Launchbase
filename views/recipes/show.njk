@@ -1,0 +1,59 @@
+{% extends "layoutAdmin.njk" %}
+
+{% block content %}
+<main class="main-show-recipe">
+  <div class="show-title-recipe">
+      <h1>Receita: Nome da Receita</h1>
+      <a class="button"href="/admin/recipes/{{ recipe.id}}/edit" >Editar receita</a>
+  </div>
+  <div class="recipe-details-content">
+      <img src="{{recipe.recipe_image}}">
+      <h3>Triplo Bacon Burguer</h3>
+      <p>Por Jorge Relato</p>
+  </div>
+</main>
+<section class="show-section-recipe">
+  <div class="content-show-details">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Ingredientes</h4>
+      
+    </div>  
+    <div class="details-ingredients-content" >
+      
+      <ul>
+        {% for item in recipe.ingredients %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>
+      
+    </div>
+    
+  </div>
+  <div class="content-show-details">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Modo de preparo </h4>
+    </div>
+    
+    <div class="details-preparation-content active">
+       <ul>
+        {% for item in recipe.preparations %} 
+        <li>{{item}}</li>
+        {% endfor%}
+      </ul>
+    </div>
+  </div>
+  <div class="content-show-details">
+    <div class="details-title-content">
+      <h4 class="recipe-title">Informações adicionais</h4>
+      
+    </div>
+    <div class="details-information-content information-details">
+       <ul>
+        <p>{{recipe.information}}</p>
+      </ul>     
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

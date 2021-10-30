@@ -15,7 +15,9 @@ header .logo img{
     margin-left:231px;
     padding-top:27px;   
 }
-.main-content {
+.main-content,
+.main-show-recipe,
+.show-section-recipe {
     width: 100%;
     max-width: 940px;
     margin: 0 230px;
@@ -53,7 +55,8 @@ header .logo img{
  margin-bottom: 30px;
  
 }
-.main-text-form h1 {
+.main-text-form h1,
+.show-title-recipe h1 {
     font: bold 24px 'Roboto', sans-serif;
     color: #111111;
     line-height: 28px;
@@ -90,7 +93,9 @@ header .logo img{
     height: 49px;
     border: solid 1px #DDDDDD;
     border-radius: 4px;
+    cursor: auto;
 }
+
 .item {
     margin-bottom: 30px;
 }
@@ -102,14 +107,98 @@ header .logo img{
     font-size: 16px;
     padding:16px;
 }
-.item div:nth-child(2) input[type="textarea"]{
+.item div:nth-child(2) textarea{
     min-height: 257px;
+    width: 100%;
+    
 }
 .item button {
-    margin-top: 15px;
+    margin-top: 5px;
     font: bold 16px 'Roboto', sans-serif;
     line-height:19px;
     color: #6558C3;
     background: none;
     border: none;
 }
+.item .ingredient input,
+.item .instruction input {
+    margin-bottom: 10px;
+    cursor: auto;
+    
+}
+.item .ingredient .ingredient input,
+.item .instruction .instruction input {
+    margin-bottom: 10px;
+}
+
+
+/* =======================show recipe details=========================== */
+
+.show-title-recipe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.show-title-recipe a.button {
+    width:136px;
+    height: 37px;
+    background-color: #6558C3;
+    border-radius: 4px;
+    padding: 9px 20px;
+
+    display: block;
+
+    font: bold 16px 'Roboto', sans-serif;
+    line-height: 19px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.recipe-details-content{
+    text-align: center;
+}
+.recipe-details-content img {
+    border-radius: 15px;
+    margin-bottom:50px;
+}
+.recipe-details-content h3 {
+    font: bold 36px 'Roboto', sans-serif;
+    line-height: 42px;
+    color: #111111;
+}
+.recipe-details-content p {
+    font: normal 20px 'Roboto', sans-serif;
+    color:#777777;
+    line-height: 24px;
+    margin-bottom: 31px;
+}
+.content-show-details div:nth-child(1) {
+    font: bold 24px 'Roboto', sans-serif;
+    line-height: 24px;
+    color:#111111;
+    margin-bottom: 19px;
+}
+.content-show-details div:nth-child(2){
+    margin-bottom: 41px;
+}
+.content-show-details div:nth-child(2) li,
+.content-show-details div:nth-child(2) p{
+    list-style: none;
+    list-style-position: inside;
+    font: normal 18px 'Roboto', sans-serif;
+    color: #444444;
+    line-height: 28px;
+}
+.content-show-details div:nth-child(2) p{
+    white-space: pre-line;
+    text-align: justify;
+}
+.content-show-details div:nth-child(2) li::before {
+    content: "-";
+    margin-right: 10px;
+}
+
+/* =======================edit recipe =========================== */
