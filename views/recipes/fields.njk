@@ -12,33 +12,54 @@
     </div>
 
     <div class="item">
-        <div id="ingredients">Ingredientes</div>
+        <div id="ingredients">Ingredientes
+        {% for item in recipe.ingredients%}
         <div class="ingredient">
-            {% for item in recipe.ingredients%}
             <input
                 type="text"
                 name="ingredients[]"
                 placeholder="Insira um ingrendiente de cada vez"
                 value="{{item}}"
+                   
             />
-            {% endfor%}
+        </div>
+        {% else %}
+        <div class="ingredient">
+            <input
+                type="text"
+                name="ingredients[]"
+                placeholder="Insira um ingrendiente de cada vez"
+                value=""      
+            />
+        </div>
+        {% endfor%}
         </div>
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
     </div>
 
     <div class="item">
-        <div id="instructions">Modo de preparo</div>
-        <div class="instruction">
-            {%for item in recipe.preparation%}
+        <div id="preparations">Modo de preparo
+        {% for item in recipe.ingredients%}
+        <div class="preparation">
             <input
                 type="text"
-                name="instructions[]"
+                name="preparations[]"
                 placeholder="Insira a forma de preparo passo a passo"
                 value="{{item}}"
             />
-            {%endfor%}
         </div>
-        <button type="button" class="add-instruction">Adicionar novo passo</button>              
+        {% else %}
+        <div class="preparation">
+            <input
+                type="text"
+                name="preparations[]"
+                placeholder="Insira a forma de preparo passo a passo"
+                value=""
+            />
+        </div>
+        {%endfor%}
+        </div>
+        <button type="button" class="add-preparation">Adicionar novo passo</button>              
     </div>
 
     <div class="item">

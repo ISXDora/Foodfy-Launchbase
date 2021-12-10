@@ -22,7 +22,7 @@ exports.post = function(req, res){
             preparations,    
     ] = keys
 
-    if(req.body[recipe_image] == "" || req.body[ingredients] == "" || req.body[preparationc] == "" ){
+    if(req.body[recipe_image] == "" || req.body[ingredients] == "" || req.body[preparations] == "" ){
         return res.send("Os campos de imagem, ingredientes e modo de preparo são obrigatórios. Por favor, preencha os campos antes de salvar a receita.")
     }
 
