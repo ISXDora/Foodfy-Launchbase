@@ -12,6 +12,30 @@
     </div>
 
     <div class="item">
+        <div>Título</div>
+        <div>
+            <input
+                type="text"
+                name="recipe_title"
+                placeholder="Título da receita"
+                value="{{recipe.recipe_title}}"
+            />
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Chef</div>
+        <div>
+            <input
+                type="text"
+                name="recipe_author"
+                placeholder="Nome do chef"
+                value="{{recipe.recipe_author}}"
+            />
+        </div>
+    </div>
+
+    <div class="item">
         <div id="ingredients">Ingredientes
         {% for item in recipe.ingredients%}
         <div class="ingredient">

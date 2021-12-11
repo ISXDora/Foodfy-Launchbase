@@ -3,13 +3,13 @@
 {% block content %}
 <main class="main-show-recipe">
   <div class="show-title-recipe">
-      <h1>Receita: Nome da Receita</h1>
+      <h1>Receita: {{recipe.recipe_title}}</h1>
       <a class="button"href="/admin/recipes/{{ recipe.id}}/edit" >Editar receita</a>
   </div>
   <div class="recipe-details-content">
       <img src="{{recipe.recipe_image}}">
-      <h3>Triplo Bacon Burguer</h3>
-      <p>Por Jorge Relato</p>
+      <h3>{{recipe.recipe_title}}</h3>
+      <p>Por {{recipe.recipe_author}}</p>
   </div>
 </main>
 <section class="show-section-recipe">

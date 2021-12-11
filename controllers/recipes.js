@@ -1,12 +1,10 @@
-const data = require('../data.js')
 const fs = require('fs')
 const dataJson = require('../data.json')
 
 
 exports.index = function(req,res) {
-    const dataProvisorio = data
 
-    return res.render('recipes/index', {dadosTeste: data})
+    return res.render('recipes/index', {recipes: dataJson.recipes})
 }
 
 exports.create = function(req, res){
@@ -82,4 +80,32 @@ exports.edit = function(req, res){
     return res.render("recipes/edit", {recipe})
 }
 
+exports.put = function(req, res) {
+    const {id} = req.body
+
+    let index = 0
+    const foundRecipe = dataJson.recipes.find(function(recipe, foundIndex){
+        if(id == recipe.id){
+            index = foundIndex
+            return true
+        }
+    })
+    if(!foundRecipe){
+        return res.send("Recipe not found")
+    }
+
+    const recipe = {
+        ...foundRecipe,
+        ...req.body,
+        id: Number(req.body.id)
+        }
+
+    dataJson.recipes[index] = recipe
+
+    fs.writeFile("data.json", JSON.stringify(dataJson, null, 2),function(err){
+        if(err) return res.send("Falha ao enviar dados!")
+    })
+       
+    return res.redirect("/admin/recipes")
+}
 

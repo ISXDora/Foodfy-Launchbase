@@ -8,13 +8,13 @@
     <section class="recipes-box">
         
         <div class="recipes">
-            {% for item in dadosTeste%}
+            {% for item in recipes %}
             <div class="recipe-content">
-                <img src="{{item.image}}">
+                <img src="{{item.recipe_image}}">
                 <div class="recipe-content-text">
-                    <h3>{{item.title}}</h3>
-                    <p>{{item.author}}</p>
-                    <a href="#">Visualizar</a>
+                    <h3>{{item.recipe_title}}</h3>
+                    <p>{{item.recipe_author}}</p>
+                    <a href="/admin/recipes/{{item.id}}">Visualizar</a>
                 </div>
             </div>
             {% endfor %}

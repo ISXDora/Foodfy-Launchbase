@@ -3,12 +3,27 @@
     <main class="main-content">
         <div class="main-text-form">
             <h1>Editando receita</h1>
-            <button form="form-create"type="submit">Salvar receita</button>
+            <div class="buttons">
+            <button form="form-delete"type="submit">Deletar</button>
+            <button form="form-edit"type="submit">Salvar receita</button>
+            </div>
         </div>
     </main>
-   <form class="form" id="form-create" method="post" action="/admin/recipes">
+   <form class="form" id="form-edit" method="post" action="/admin/recipes?_method=PUT">
         {%include "recipes/fields.njk"%}
         {%include "recipes/scripts.njk"%}
+        <input 
+                type="hidden" 
+                name="id" 
+                value="{{recipe.id}}"> 
+   </form>
+
+   <form class="form" id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
+        {%include "recipes/confirm.njk"%}
+        <input 
+                type="hidden" 
+                name="id" 
+                value="{{recipe.id}}"> 
    </form>
         
 {% endblock %}
