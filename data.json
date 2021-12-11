@@ -1,20 +1,3 @@
 {
-  "recipes": [
-    {
-      "id": 1,
-      "recipe_image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
-      "recipe_title": "X Burguer Daora",
-      "recipe_author": "Isadora Xavier",
-      "ingredients": [
-        "3 kg de carne moída (escolha uma carne magra e macia)",
-        "300 g de bacon moído",
-        "Opaaaa, deu certo"
-      ],
-      "preparations": [
-        "3 kg de carne moída (escolha uma carne magra e macia)",
-        "300 g de bacon moído"
-      ],
-      "information": "            teste\r\n            "
-    }
-  ]
+  "recipes": []
 }
