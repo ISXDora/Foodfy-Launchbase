@@ -115,6 +115,15 @@ textarea {
     border: solid 1px #DDDDDD;
     border-radius: 4px;
     cursor: auto;
+    padding: 15px 20px;
+    font-family:'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #111111;
+}
+.items textarea {
+    line-height: 24px;
 }
 
 .item{
@@ -142,8 +151,16 @@ textarea {
     border: none;
 }
 .item #ingredients .ingredient,
-.item #preparations .preparation {
+.item #preparations .preparation,
+.item div div.ingredient,
+.item div div.preparation{
     margin-top: 10px;
+}
+.items div.item div {
+    margin-bottom: 15px;
+}
+.items div.item div > button {
+    margin-bottom: 30px;
 }
 
 
@@ -219,3 +236,10 @@ textarea {
 }
 
 /* =======================edit recipe =========================== */
+.buttons > button:nth-child(1) {
+    width: 92px;
+    height: 37px;
+    background-color: #DC4747;
+    border-radius: 4px;
+
+}

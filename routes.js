@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = express.Router()
-const recipesData = require('./data.js')
+const recipesData = require('./data.json')
 const recipes = require('./controllers/recipes')
 
 
@@ -8,18 +8,18 @@ const recipes = require('./controllers/recipes')
 
 
 routes.get('/', (req,res) =>{
-    return  res.render('website/index', { items: recipesData })
+    return  res.render('website/index', { items: recipesData.recipes })
  })
 routes.get('/about', (req,res) =>{
      return  res.render('website/about')
   })
 routes.get('/recipes', (req,res) =>{
-     return  res.render('website/recipes', {items: recipesData})
+     return  res.render('website/recipes', {items: recipesData.recipes})
   })
 routes.get('/recipes/:index', (req,res) =>{
      
      const indexRecipe = req.params.index
-     const recipe = recipesData
+     const recipe = recipesData.recipes
      console.log(recipe[indexRecipe.replace(":","")])
  
      return res.render("website/recipe", {items: recipe[indexRecipe.replace(":", "")]})
