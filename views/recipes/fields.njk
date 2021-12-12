@@ -36,7 +36,8 @@
     </div>
 
     <div class="item">
-        <div id="ingredients">Ingredientes
+        <div id="ingredients">Ingredientes</div>
+        <div>
         {% for item in recipe.ingredients%}
         <div class="ingredient">
             <input
@@ -62,7 +63,8 @@
     </div>
 
     <div class="item">
-        <div id="preparations">Modo de preparo
+        <div id="preparations">Modo de preparo</div>
+        <div>
         {% for item in recipe.ingredients%}
         <div class="preparation">
             <input
@@ -81,8 +83,9 @@
                 value=""
             />
         </div>
-        {%endfor%}
+        
         </div>
+        {%endfor%}
         <button type="button" class="add-preparation">Adicionar novo passo</button>              
     </div>
 

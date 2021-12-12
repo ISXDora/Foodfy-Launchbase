@@ -117,7 +117,7 @@ textarea {
     cursor: auto;
 }
 
-.item {
+.item{
     margin-bottom: 30px;
 }
 
@@ -141,16 +141,12 @@ textarea {
     background: none;
     border: none;
 }
-.item .ingredient input,
-.item .instruction input {
-    margin-bottom: 10px;
-    cursor: auto;
-    
+.item #ingredients .ingredient,
+.item #preparations .preparation {
+    margin-top: 10px;
 }
-.item .ingredient .ingredient input,
-.item .instruction .instruction input {
-    margin-bottom: 10px;
-}
+
+
 
 
 /* =======================show recipe details=========================== */
