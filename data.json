@@ -2,7 +2,7 @@
   "recipes": [
     {
       "id": 1,
-      "recipe_image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
+      "recipe_image": "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
       "recipe_title": "Triplo Bacon Burguer",
       "recipe_author": "Jorge Relato",
       "ingredients": [
@@ -21,7 +21,32 @@
         "30 ml de água gelada;",
         "3 kg de carne moída (escolha uma carne magra e macia);"
       ],
-      "information": "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres!\r\nVocê sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açougueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijo, tomates e alface.\r\n            "
+      "information": "Preaqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres!\r\nVocê sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açougueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijo, tomates e alface.\r\n            \r\n            \r\n            "
+    },
+    {
+      "id": 2,
+      "recipe_image": "https://images.unsplash.com/photo-1574126154517-d1e0d89ef734?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "recipe_title": "Pizza da casa",
+      "recipe_author": "Isadora",
+      "ingredients": [
+        "Ovos cozidos",
+        "Bacon em pedaços",
+        "Azeitonas",
+        "Molho de tomate",
+        "Queijo mussarela",
+        "Folhas de manjericão",
+        "tomates em rodelas",
+        "Massa fina já pronta"
+      ],
+      "preparations": [
+        "Organizar em ordem",
+        "O primeiro até que vai, quando clona a partir do segundo, os clones são dispostos abaixo do segundo em ordem decrescente.",
+        "Sempre abaixo",
+        "Adicione o queijo e em seguida espalhe o restante dos ingredientes",
+        "Leve ao forno por 30 minutos em média",
+        "Primeiro sobre a massa pronta derrame o molho"
+      ],
+      "information": "            Curta o processo!\r\n            "
     }
   ]
 }
