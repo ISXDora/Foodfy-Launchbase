@@ -26,17 +26,18 @@
             <input 
                 type="text"
                 name="filter"
-                placeholder="Nome ou Especialidade"
+                placeholder="Buscar uma receita"
                 value={{filter}}
             >
             <button type="submit">Filtrar</button>
         </form>
         </div>
     </header>
-
+    <div class="content">
     {% block content %}
 
     {% endblock %}
+    </div>
     <footer >
         <small>Todos os direitos reservados, receitas Foodfy</small>
 
