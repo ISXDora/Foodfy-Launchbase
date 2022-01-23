@@ -12,18 +12,10 @@
         </form>
     </div>
     {%endblock%}
+    
     {% block content %}
-    <main class="main-content">
-        <div class="main-text">
-            <h1>As melhores receitas</h1>
-            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
-        </div>
-        <div class="illustration-img">
-            <img src="/assets/chef.png" alt="Ilustração chef de cozinha">
-        </div>
-    </main>
     <section class="recipes-box">
-        <h2>Mais acessadas</h2>
+        <h2 style="margin:0 auto 20px;">Buscando por {{filter}}</h2>
         
         <div class="recipes">
             {% for item in items%}

@@ -19,7 +19,7 @@ header {
     align-items: center;
     display: grid;
     grid-template-columns: 212px 1fr 1fr;
-    max-width: 940px;
+    width: 940px;
     margin: 30px auto;
 }
 header img {
@@ -102,7 +102,9 @@ header a {
     color: #777777;
     margin-top:5px;
 }
-
+.content > section .recipex-box {
+    max-width: 940px;
+}
 
 footer {
     margin-top: auto;
@@ -302,7 +304,7 @@ section.recipe-details{
     margin-bottom: 39px;
 
 }
-/*==================== Footer no final com Grid=======================*/
+/*==================== filter e search =======================*/
 .filter form{
     display : grid;
     grid-template-columns: 1fr 93px;
@@ -334,4 +336,39 @@ header .filter button {
     border-radius: 4px;
     color: white;
     font: bold 16px 'Roboto', sans-serif;
+}
+
+/*==================== filter e search =======================*/
+.content-chefs {
+    max-width: 940px;
+    margin: 20px auto 0;
+}
+
+.chefs {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+}
+.chefs span {
+    width: 64px;
+    height:64px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+.chefs div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+}
+.chefs div h3 {
+    margin-bottom: 5px;
+    color: #111111;
+    font: 400 18px 'Roboto', sans-serif;
+    line-height: 21px;
+
+}
+.chefs div small {
+    color: #666666;
+    font-size: 14px;
+    line-height: 16px;
 }

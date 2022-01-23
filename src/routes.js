@@ -9,6 +9,12 @@ routes.get('/', (req,res) =>{
 routes.get('/about', (req,res) =>{
      return  res.render('website/about')
   })
+routes.get('/search', (req,res) =>{
+   return  res.render('website/search', { items: recipes })
+})
+routes.get('/chefs', (req,res) =>{
+   return  res.render('website/chefs', { items: recipes })
+})
 routes.get('/recipes', (req,res) =>{
      return  res.render('website/recipes', {items: recipes})
   })
