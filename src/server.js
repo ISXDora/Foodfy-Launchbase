@@ -11,7 +11,7 @@ server.listen(port,() => {
 
 server.set('view engine', 'njk')
 
-nunjucks.configure('src/app/views', {
+nunjucks.configure('src/app/views/',{
     autoescape: false,
     express: server,
     noCache: true

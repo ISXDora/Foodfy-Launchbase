@@ -31,7 +31,7 @@ const menuItems = document.querySelectorAll("header .menu a")
 
 for (item of menuItems){
     if(currentPage.includes(item.getAttribute("href"))){
-        item.classList.add("bold")
+        item.classList.add("bold", "active")
         console.log(currentPage)
         console.log(item)
     }

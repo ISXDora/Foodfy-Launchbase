@@ -1,6 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const recipes = require('./app/controllers/admin/recipes')
+const chefs = require('./app/controllers/admin/chefs')
 
 
 routes.get('/', (req,res) =>{
@@ -44,10 +45,10 @@ routes.get('/recipes/:index', (req,res) =>{
 
 
  //routes.get("/admin/chefs", chefs.index);
- //routes.get("/admin/create", chefs.create); // Mostrar formulário de nova receita
- //routes.get("/admin/chefs/:id", chefs.show); // Exibir detalhes de uma receita
+ routes.get("/admin/chefs/create", chefs.create); // Mostrar formulário de nova receita
+ routes.get("/admin/chefs/:id", chefs.show); // Exibir detalhes de uma receita
  //routes.get("/admin/chefs/:id/edit", chefs.edit); // Mostrar formulário de edição de receita
- //routes.post("/admin/chefs", chefs.post); // Cadastrar nova receita
+ routes.post("/admin/chefs", chefs.post); // Cadastrar nova receita
  //routes.put("/admin/chefs", chefs.put); // Editar uma receita
  //routes.delete("/admin/chefs", chefs.delete);
 
