@@ -44,7 +44,7 @@ routes.get('/recipes/:index', (req,res) =>{
  
 
 
- //routes.get("/admin/chefs", chefs.index);
+ routes.get("/admin/chefs", chefs.index);
  routes.get("/admin/chefs/create", chefs.create); // Mostrar formulário de nova receita
  routes.get("/admin/chefs/:id", chefs.show); // Exibir detalhes de uma receita
  //routes.get("/admin/chefs/:id/edit", chefs.edit); // Mostrar formulário de edição de receita

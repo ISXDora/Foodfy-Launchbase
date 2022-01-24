@@ -338,7 +338,7 @@ header .filter button {
     font: bold 16px 'Roboto', sans-serif;
 }
 
-/*==================== filter e search =======================*/
+/*==================== filter e search e chefs=======================*/
 .content-chefs {
     max-width: 940px;
     margin: 20px auto 0;
@@ -349,7 +349,7 @@ header .filter button {
     grid-template-columns: 64px 1fr;
     gap: 20px;
 }
-.chefs span {
+.chefs img {
     width: 64px;
     height:64px;
     background-color: #ddd;
