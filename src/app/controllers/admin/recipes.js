@@ -1,103 +1,71 @@
-const db = require('../../../config/db')
-const Recipe = require('../../models/admin/Recipe')
-
+const Recipe = require("../../models/admin/Recipe")
 module.exports = {
 
     index(req,res){
-        return res.render('admin/recipes/index')
+        Recipe.all(function(recipes){
+            
+            return res.render('admin/recipes/index', {recipes})
+        })
     },
     create(req, res){
-        return res.render("admin/recipes/create")
+
+        Recipe.chefsSelectOptions(function(options){
+            return res.render("admin/recipes/create", {chefsOptions: options})
+        })
     },
     post(req, res){
     
-    const keys = Object.keys(req.body)
-    
-    const [recipe_image,
-            ingredients,
-            preparations,    
-    ] = keys
-    
-    if(req.body[recipe_image] == "" || req.body[ingredients] == "" || req.body[preparations] == "" ){
-        return res.send("Os campos de imagem, ingredientes e modo de preparo são obrigatórios. Por favor, preencha os campos antes de salvar a receita.")
-    }
-     
-    return res.redirect("/admin/recipes")
+        const keys = Object.keys(req.body)
+
+        keys.pop()
+
+        for(key of keys){
+            if(req.body[key]==""){
+                return res.send("Por vafor, preencha todos os campos!")
+            }
+        }
+        console.log(keys)
+        Recipe.create(req.body, function(recipe){
+            return res.redirect(`/admin/recipes/${recipe.id}`)
+        })
     },
     show(req, res){
-    const {id} = req.params
-    const foundRecipe = dataJson.recipes.find(function(recipe){
-        return recipe.id == id
-    })
-    
-    if(!foundRecipe){
-        return res.send("Recipe not found")
-    }
-    
-    const recipe = {
-        ...foundRecipe,
-    }
-    
-    return res.render("recipes/show", )
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipe not found!")
+
+            return res.render("admin/recipes/show", {recipe} )
+        })     
     },
     edit(req, res){
-    const {id} = req.params
+        Recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send("Recipe not found!")
+
+            Recipe.chefsSelectOptions(function(options){
+                
+                return res.render("admin/recipes/edit", {recipe, chefsOptions: options})
+            })
+        })
     
-    const foundRecipe = dataJson.recipes.find(function(recipe){
-        return recipe.id == id
-    })
-    
-    if(!foundRecipe){
-        return res.send("Recipe not found!")
-    }
-    
-    const recipe = {
-        ...foundRecipe,
-    }
-    
-    return res.render("recipes/edit")
     },
     put(req, res) {
-    const {id} = req.body
-
-    let index = 0
-    const foundRecipe = dataJson.recipes.find(function(recipe, foundIndex){
-        if(id == recipe.id){
-            index = foundIndex
-            return true
+        const keys = Object.keys(req.body) 
+        
+        for(key of keys){
+            if(req.body[key]==""){
+                return res.send("Por favor, preencha todos os campos!")
+            }
         }
-    })
-    if(!foundRecipe){
-        return res.send("Recipe not found")
-    }
-
-    const recipe = {
-        ...foundRecipe,
-        ...req.body,
-        id: Number(req.body.id)
-        }
-
-    dataJson.recipes[index] = recipe
-
-    fs.writeFile("data.json", JSON.stringify(dataJson, null, 2),function(err){
-        if(err) return res.send("Falha ao enviar dados!")
-    })
-       
-    return res.redirect("/admin/recipes")
+        Recipe.update(req.body, function(){
+            
+            return res.redirect("/admin/recipes")
+        })
     },
     delete(req, res){
-const {id} = req.body
+        Recipe.delete(req.body.id, function(){
 
-const filteredRecipes = dataJson.recipes.filter(function(recipe){
-    return recipe.id != id
-})
-dataJson.recipes = filteredRecipes;
-
-fs.writeFile('data.json', JSON.stringify(dataJson, null, 2), function(err){
-    if(err) return res.send("Write File error: " + err)
-
-    return res.redirect("/admin/recipes")
-})
+            return res.redirect("/admin/recipes")
+        })
     }
 }
+
 

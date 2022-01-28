@@ -4,9 +4,9 @@
         <div>
             <input
                 type="url"
-                name="recipe_image"
+                name="image"
                 placeholder="http://"
-                value="{{recipe.recipe_image}}"
+                value="{{recipe.image}}"
             />
         </div>
     </div>
@@ -16,9 +16,9 @@
         <div>
             <input
                 type="text"
-                name="recipe_title"
+                name="title"
                 placeholder="Nome da receita"
-                value="{{recipe.recipe_title}}"
+                value="{{recipe.title}}"
             />
         </div>
     </div>
@@ -26,12 +26,18 @@
     <div class="item">
         <div>Chef</div>
         <div>
-            <input
-                type="text"
-                name="recipe_author"
-                placeholder="Nome do chef"
-                value="{{recipe.recipe_author}}"
-            />
+            <select name="chef"
+                    placeholder="Selecione um chef">
+                {% for chef in chefsOptions %}
+                    <option
+                        
+                        value="{{chef.id}}" {%if recipe.chef_id == chef.id %}
+                        selected {%endif%} >{{chef.name }}</option>
+                {% endfor %}
+                    <option                         
+                        value="" {%if recipe.chef_id == chef.id %}
+                        selected {%endif%} >Selecione um chef</option>
+            </select>                    
         </div>
     </div>
 
@@ -42,7 +48,7 @@
         <div class="ingredient">
             <input
                 type="text"
-                name="ingredients[]"
+                name="ingredients"
                 placeholder="Insira um ingrendiente de cada vez"
                 value="{{item}}"
                    
@@ -52,7 +58,7 @@
         <div class="ingredient">
             <input
                 type="text"
-                name="ingredients[]"
+                name="ingredients"
                 placeholder="Insira um ingrendiente de cada vez"
                 value=""      
             />
@@ -69,7 +75,7 @@
         <div class="preparation">
             <input
                 type="text"
-                name="preparations[]"
+                name="preparation"
                 placeholder="Insira a forma de preparo passo a passo"
                 value="{{item}}"
             />
@@ -78,7 +84,7 @@
         <div class="preparation">
             <input
                 type="text"
-                name="preparations[]"
+                name="preparation"
                 placeholder="Insira a forma de preparo passo a passo"
                 value=""
             />

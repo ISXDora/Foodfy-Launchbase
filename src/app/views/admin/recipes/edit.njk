@@ -10,8 +10,8 @@
         </div>
     </main>
    <form class="form" id="form-edit" method="post" action="/admin/recipes?_method=PUT">
-        {%include "recipes/fields.njk"%}
-        {%include "recipes/scripts.njk"%}
+        {%include "admin/recipes/fields.njk"%}
+        {%include "admin/recipes/scripts.njk"%}
         <input 
                 type="hidden" 
                 name="id" 
@@ -19,7 +19,7 @@
    </form>
 
    <form class="form" id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
-        {%include "recipes/confirm.njk"%}
+        {%include "admin/recipes/confirm.njk"%}
         <input 
                 type="hidden" 
                 name="id" 
