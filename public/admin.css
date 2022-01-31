@@ -29,7 +29,7 @@ header .menu a {
     color: #999999;
     
 }
-header .menu a.active{
+header .menu a.bold {
     font-weight: bold;
     color: #FFFFFF;
 }
@@ -276,7 +276,7 @@ select {
 .content-box .chefs {
     display : grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr;
     gap: 30px;
 }
 .content-box .chefs .content-chef {

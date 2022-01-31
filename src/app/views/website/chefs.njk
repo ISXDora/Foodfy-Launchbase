@@ -1,12 +1,16 @@
 {% extends "layout.njk" %}
 {%block content %}
-    <div class="content-chefs">
+    <section class="content-box">
         <div class="chefs">
-            <img src="{{chef.recipe_image}}">
-            <div>
-                <h3>Júlia Kinoto</h3>
-                <small>3 receitas</small>
+            {%for chef in chefs%}
+            <div class="content-chef">
+                <img src="{{chef.avatar_url}}">
+                <div>
+                <h3>{{chef.name}}</h3>
+                <small>{{chef.total_recipes}} receitas</small>
+                </div>
             </div>
+            {%endfor%}
         </div>
-    </div>
+</section>
 {% endblock%}

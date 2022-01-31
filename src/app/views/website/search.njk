@@ -18,11 +18,11 @@
         <h2 style="margin:0 auto 20px;">Buscando por {{filter}}</h2>
         
         <div class="recipes">
-            {% for item in items%}
+            {% for item in recipes%}
             <div class="recipe-content">
-                <img src="{{item.recipe_image}}">
-                <h3>{{item.recipe_title}}</h3>
-                <p>por {{item.recipe_author}}</p>
+                <img src="{{item.image}}">
+                <h3>{{item.title}}</h3>
+                <p>por {{item.chef_name}}</p>
             </div>
             {% endfor %}
         </div>

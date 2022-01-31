@@ -1,16 +1,16 @@
 
-const recipes = document.querySelectorAll('.recipe-content');
-console.log(recipes)
+//const recipes = document.querySelectorAll('.recipe-content');
+//console.log(recipes)
 
-for (let i = 0; i < recipes.length; ++i){
-    let recipe = recipes[i];
-    recipe.addEventListener("click", function(){
-       const position = [i]
-        console.log(position)
+//for (let i = 0; i < recipes.length; ++i){
+    //let recipe = recipes[i];
+    //recipe.addEventListener("click", function(){
+      // const position = [i] 
+        //console.log(position)
 
-        window.location.href= `/recipes/:${position}`
-    })
-}
+        //window.location.href= `/recipes/:${position}`
+    //})
+//}
 
 const handleTogle = document.querySelectorAll('.togle-button');
 
@@ -31,7 +31,7 @@ const menuItems = document.querySelectorAll("header .menu a")
 
 for (item of menuItems){
     if(currentPage.includes(item.getAttribute("href"))){
-        item.classList.add("bold", "active")
+        item.classList.add("bold")
         console.log(currentPage)
         console.log(item)
     }

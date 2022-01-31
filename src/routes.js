@@ -1,32 +1,17 @@
 const express = require('express')
 const routes = express.Router()
-const recipes = require('./app/controllers/website/recipes')
+const recipes = require('./app/controllers/admin/recipes')
 const chefs = require('./app/controllers/admin/chefs')
+const data = require('./app/controllers/website/recipes')
 
 
-routes.get('/', recipes.index)
-
-routes.get('/about', (req,res) =>{
-     return  res.render('website/about')
-  })
-routes.get('/search', (req,res) =>{
-   return  res.render('website/search', { items: recipes })
-})
-routes.get('/chefs', (req,res) =>{
-   return  res.render('website/chefs', { items: recipes })
-})
-routes.get('/recipes', (req,res) =>{
-     return  res.render('website/recipes', {items: recipes})
-  })
-routes.get('/recipes/:index', (req,res) =>{
+routes.get('/', data.mostAccessed); //Página inicial do site - carrega receitas mais acessadas 
+routes.get('/about', data.about); //Página organizacional do foodfy 
+routes.get('/search', data.search)
+routes.get('/chefs', data.indexChefs) // Mostra página com a listagem dos chefs
+routes.get('/recipes', data.index) //Página carrega receitas
+routes.get('/recipes/:id', data.show)
      
-     const indexRecipe = req.params.index
-     const recipe =recipes
-     console.log(recipe[indexRecipe.replace(":","")])
- 
-     return res.render("website/recipe", {items: recipe[indexRecipe.replace(":", "")]})
-     
- }) 
 
 
  routes.get("/admin", (req, res) => {

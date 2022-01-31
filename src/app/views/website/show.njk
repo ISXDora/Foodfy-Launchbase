@@ -2,9 +2,9 @@
 
 {% block content %}
   <div class="recipe-details-content">
-      <img src="{{items.recipe_image}}">
-      <h3>{{items.recipe_title}}</h3>
-      <p>por {{items.recipe_author}}</p>
+      <img src="{{recipe.image}}">
+      <h3>{{recipe.title}}</h3>
+      <p>por {{recipe.chef_name}}</p>
  </div>
 <section class="recipe-details">
   <div class="details-ingredients">
@@ -15,7 +15,7 @@
     <div class="details-ingredients-content" >
       
       <ul>
-        {% for item in items.ingredients %} 
+        {% for item in recipe.ingredients %} 
         <li>{{item}}</li>
         {% endfor%}
       </ul>
@@ -31,7 +31,7 @@
     
     <div class="details-preparation-content active">
        <ul>
-        {% for item in items.preparations %} 
+        {% for item in recipe.preparation %} 
         <li>{{item}}</li>
         {% endfor%}
       </ul>
@@ -44,7 +44,7 @@
     </div>
     <div class="details-information-content">
        <ul>
-        <li>{{items.information}}</li>
+        <li>{{recipe.information}}</li>
       </ul>     
     </div>
 
