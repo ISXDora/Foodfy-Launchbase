@@ -17,6 +17,7 @@ module.exports = {
     },
     indexChefs(req, res){
         Chef.all(function(chefs){
+
             return res.render('website/chefs', {chefs})
         })
     },

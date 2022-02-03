@@ -36,8 +36,18 @@ module.exports = {
         })
     },
     find(id, callback){
-        db.query(`SELECT * FROM chefs WHERE id=$1`, [id], function(err, results){
+        db.query(`SELECT chefs.*, (
+            SELECT count(recipes) 
+            FROM chefs
+            LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+            WHERE chefs.id=$1
+            GROUP BY chefs.id
+        ) AS total_recipes
+                FROM chefs
+                LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+                WHERE chefs.id=$1`, [id], function(err, results){
             if (err) throw `Database Error! ${err}`
+            
             
             callback(results.rows[0])
         })
@@ -108,6 +118,20 @@ module.exports = {
             ORDER BY chefs.name LIMIT $1 OFFSET $2
         `
         db.query(query, [limit, offset], function(err, results){
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    }, 
+    getRecipes(id, callback){
+        db.query(`
+            SELECT *, recipes.id AS recipe_id
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE chefs.id = $1
+
+        `, [id], function(err, results){
+
             if(err) throw `Database Error! ${err}`
 
             callback(results.rows)
