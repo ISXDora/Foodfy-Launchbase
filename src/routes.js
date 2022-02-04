@@ -34,7 +34,7 @@ routes.get('/recipes/:id', data.show)
  routes.get("/admin/chefs/:id/edit", chefs.edit); // Mostrar formulário de edição de receita
  routes.post("/admin/chefs", chefs.post); // Cadastrar nova receita
  routes.put("/admin/chefs", chefs.put); // Editar uma receita
- //routes.delete("/admin/chefs", chefs.delete);
+ routes.delete("/admin/chefs", chefs.delete);
 
  module.exports = routes
 

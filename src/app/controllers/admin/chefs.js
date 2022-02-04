@@ -56,5 +56,16 @@ module.exports = {
         Chef.update(req.body, function(){
             return res.redirect(`/admin/chefs/${req.body.id}`)
         })
+    }, 
+    delete(req, res){
+      Chef.getRecipes(req.body.id, function(recipes){
+          if(recipes.length == 0){
+              return Chef.delete(req.body.id, function(){
+                    res.redirect("/admin/chefs/")
+              })
+          }else {
+              res.send("Chefs com receitas cadastradas não podem ser removidos do sistema!")
+          }
+      })
     }
 }

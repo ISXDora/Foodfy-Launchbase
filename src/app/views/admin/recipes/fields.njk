@@ -43,7 +43,6 @@
 
     <div class="item">
         <div id="ingredients">Ingredientes</div>
-        <div>
         {% for item in recipe.ingredients%}
         <div class="ingredient">
             <input
@@ -64,13 +63,11 @@
             />
         </div>
         {% endfor%}
-        </div>
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
     </div>
 
     <div class="item">
         <div id="preparations">Modo de preparo</div>
-        <div>
         {% for item in recipe.preparations%}
         <div class="preparation">
             <input
@@ -88,8 +85,6 @@
                 placeholder="Insira a forma de preparo passo a passo"
                 value=""
             />
-        </div>
-        
         </div>
         {%endfor%}
         <button type="button" class="add-preparation">Adicionar novo passo</button>              

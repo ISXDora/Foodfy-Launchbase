@@ -87,41 +87,6 @@ module.exports = {
 
             callback()
         })
-    },
-    paginate(params){
-        
-        const {filter, limit, offset, callback} = params
-
-        let query = "",
-            filterQuery = "",
-            totalQuery = `
-                ( SELECT count(*) FROM chefs ) AS total
-            `
-
-        if (filter){
-            
-            filterQuery = `
-                WHERE chefs.name ILIKE '%${filter}%'
-            `
-
-            totalQuery = `
-                (SELECT count(*) FROM chefs
-                ${filterQuery}) 
-                AS total
-            `
-        }
-
-        query = `
-            SELECT *, ${totalQuery}
-            FROM chefs
-            ${filterQuery}
-            ORDER BY chefs.name LIMIT $1 OFFSET $2
-        `
-        db.query(query, [limit, offset], function(err, results){
-            if(err) throw `Database Error! ${err}`
-
-            callback(results.rows)
-        })
     }, 
     getRecipes(id, callback){
         db.query(`

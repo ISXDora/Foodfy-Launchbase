@@ -31,6 +31,10 @@
                 <img src="{{item.image}}">
                 <h3>{{item.title}}</h3>
                 <p>por {{item.chef_name}}</p>
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value="{{item.id}}"> 
             </div>
             {% endfor %}
         </div>
