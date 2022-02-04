@@ -8,9 +8,25 @@ module.exports = {
         })
     },
     index(req, res){
-        Recipe.all(function(recipes){
-            return res.render('website/recipes', { recipes})
-        })
+            let {page, limit} = req.params
+
+            page = page || 1
+            limit = limit || 6 
+            let offset = limit * (page - 1)
+
+            const params = {
+                page,
+                limit,
+                offset, 
+                callback(recipes){
+                    const pagination = {total: Math.ceil(recipes[0].total/limit),
+                                        page,
+                                        }
+                    return res.render('website/recipes', { recipes, pagination})
+                }
+            }
+
+            Recipe.paginate(params)
     },
     about(req,res){
         return res.render('website/about')
@@ -33,7 +49,7 @@ module.exports = {
 
             if ( filter ) {
             Recipe.findBy( filter, function(recipes){
-                return res.render("website/search", {recipes} )
+                return res.render("website/search", {recipes, filter} )
                })
              }else {
                  Recipe.all(function(recipes){

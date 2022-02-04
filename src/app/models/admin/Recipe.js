@@ -59,7 +59,7 @@ module.exports = {
         SELECT recipes.*, chefs.name AS chef_name 
         FROM recipes 
         LEFT JOIN chefs ON (recipes.chef_id = chefs.id) 
-        WHERE recipes.title ILIKE '%${filter}%'`, function(err,results){
+        WHERE recipes.title ILIKE '%${filter}%' `, function(err,results){
             if (err) throw `Database Error! ${err}`
 
             callback(results.rows)
@@ -105,5 +105,23 @@ module.exports = {
 
             callback(results.rows)
         })
-    }
+    },
+    paginate(params){
+        
+        const {limit, offset, callback} = params
+ 
+        let query = `SELECT recipes.*,(
+            SELECT count(*) FROM recipes
+        ) AS total, chefs.name AS chef_name
+        FROM recipes 
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        GROUP BY recipes.id, chefs.name
+        ORDER BY recipes.title ASC LIMIT $1 OFFSET $2`
+
+        db.query(query, [limit, offset], function(err, results){
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    },
 }

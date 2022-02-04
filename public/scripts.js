@@ -1,16 +1,15 @@
 
-//const recipes = document.querySelectorAll('.recipe-content');
-//console.log(recipes)
+const recipes = document.querySelectorAll('.recipe-content');
 
-//for (let i = 0; i < recipes.length; ++i){
-    //let recipe = recipes[i];
-    //recipe.addEventListener("click", function(){
-      // const position = [i] 
-        //console.log(position)
+for(let i =0; i < recipes.length; i++) {
+    let recipe = recipes[i];
+    recipe.addEventListener("click", function(){
+        position = recipe.lastChild.previousSibling.value
+        window.location.href = `/recipes/${position}/`
+    })
+}
 
-        //window.location.href= `/recipes/:${position}`
-    //})
-//}
+
 
 const handleTogle = document.querySelectorAll('.togle-button');
 
@@ -47,11 +46,62 @@ redirectPage.addEventListener("click", function(){
 
 
 
+function paginate(selectedPage, totalPages){
+    let pages = [],
+        oldPage 
 
-
-
+    for(let currentPage = 1; currentPage <= totalPages; currentPage++){
         
-
+        const pagesAfterSelectedPage = currentPage <= selectedPage + 1
+        const pagesBeforeSelectedPage = currentPage >= selectedPage - 1
+        const firstAndLastPage = currentPage == 1 || currentPage == totalPages
         
+        
+        if(firstAndLastPage || pagesBeforeSelectedPage && pagesAfterSelectedPage){
+            
+            if(oldPage && currentPage - oldPage > 2){
+                pages.push('...')    
+            }
+            if(oldPage && currentPage - oldPage == 2){
+                pages.push(oldPage + 1)
+            }
+            pages.push(currentPage)
+            oldPage = currentPage
+        }
+    }
+    console.log(pages)
+
+    return pages
+}
+
+
+function createPagination(pagination){
+    const page = +pagination.dataset.page;
+const total = +pagination.dataset.total;
+const pages = paginate(page, total)
+
+let elements =""
+for (let page of pages){
+    
+    if(String(page).includes('...')){
+        elements += `<span>${page}</span>`
+    } else {
+        
+        elements += `<a href="?page=${page}">${page}</a>`
+    }
+}
+
+pagination.innerHTML = elements
+
+
+}
+
+
+
+const pagination = document.querySelector('.pagination')
+
+if(pagination){
+    createPagination(pagination)
+}
 
 
