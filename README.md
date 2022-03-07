@@ -27,27 +27,43 @@ Inicie o servidor
 
 `npm start`
 
-> Um pequeno detalhe, o banco ainda não está sendo gerado de forma automática X(
+~~Um pequeno detalhe, o banco ainda não está sendo gerado de forma automática X(~~
     
-[ ] Inserir comando para criação automática do banco
-[ ] Alterar porta padrão do postgres
+- [ ] Inserir comando para criação automática do banco
+- [ ] Alterar porta padrão do postgres
 
 
 ## Rotas área administrativa 
 
-`http://localhost:3000/admin/recipes` // Index de receitas 
-`http://localhost:3000/admin/recipes/9` // Show da receita 
-`http://localhost:3000/admin/recipes/9/edit` // Formulário de edição da receita 
+Index de receitas
 
-`http://localhost:3000/admin/chefs/` //Index de chefs
-`http://localhost:3000/admin/chefs/2` // Show de um chef por query params, e suas receitas vinculadas
-`http://localhost:3000/admin/chefs/2/edit` // Formulário de cadastro de um chef
+`http://localhost:3000/admin/recipes`
+
+Show da receita
+
+`http://localhost:3000/admin/recipes/9`
+
+Formulário de edição da receita 
+
+`http://localhost:3000/admin/recipes/9/edit`
+
+Index de chefs
+
+`http://localhost:3000/admin/chefs/`
+
+Show de um chef por query params, e suas receitas vinculadas
+
+`http://localhost:3000/admin/chefs/2`
+
+Formulário de cadastro de um chef
+
+`http://localhost:3000/admin/chefs/2/edit`
 
 ## Tecnologias Utilizadas 
 
-> Javascript com tempplate engine *Nunjuks*
-> CSS
-> Estrutura do projeto com deveres separados por camadas (Lembrando arquitetura MVC)
-> Node.js com Express 
-> Models e Controllers utilizando callback functions para comunicação 
-> Banco de dados Postgresql
+- Javascript com tempplate engine *Nunjuks*
+- CSS
+- Estrutura do projeto com deveres separados por camadas (Lembrando arquitetura MVC)
+- Node.js com Express 
+- Models e Controllers utilizando callback functions para comunicação 
+- Banco de dados Postgresql
