@@ -3,8 +3,10 @@ const recipes = document.querySelectorAll('.recipe-content');
 
 for(let i =0; i < recipes.length; i++) {
     let recipe = recipes[i];
+    console.log(recipe)
     recipe.addEventListener("click", function(){
         position = recipe.lastChild.previousSibling.value
+        console.log(position)
         window.location.href = `/recipes/${position}/`
     })
 }
@@ -69,7 +71,7 @@ function paginate(selectedPage, totalPages){
             oldPage = currentPage
         }
     }
-    console.log(pages)
+
 
     return pages
 }
@@ -80,7 +82,7 @@ function createPagination(pagination){
 const total = +pagination.dataset.total;
 const pages = paginate(page, total)
 
-let elements =""
+let elements = ""
 for (let page of pages){
     
     if(String(page).includes('...')){
