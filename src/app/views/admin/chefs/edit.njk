@@ -1,6 +1,6 @@
 {% extends "layoutAdmin.njk" %}
     {% block content %}
-    <main class="main-content">
+    <main class="container main-content">
         <div class="main-text-form">
             <h1>Editando chef</h1>
             <div class="buttons">
@@ -8,21 +8,21 @@
             <button form="form-edit"type="submit">Salvar chef</button>
             </div>
         </div>
-    </main>
-   <form class="form" id="form-edit" method="post" action="/admin/chefs?_method=PUT">
-        {%include "admin/chefs/fields.njk"%}
-        <input 
-                type="hidden" 
-                name="id" 
-                value="{{chef.id}}"> 
-   </form>
+        <form class="form" id="form-edit" method="post" action="/admin/chefs?_method=PUT">
+                {%include "admin/chefs/fields.njk"%}
+                <input 
+                        type="hidden" 
+                        name="id" 
+                        value="{{chef.id}}"> 
+        </form>
 
-   <form class="form" id="form-delete" method="post" action="/admin/chefs?_method=DELETE">
-        {%include "admin/chefs/confirm.njk"%}
-        <input 
-                type="hidden" 
-                name="id" 
-                value="{{chef.id}}"> 
-   </form>
+        <form class="form" id="form-delete" method="post" action="/admin/chefs?_method=DELETE">
+                {%include "admin/chefs/confirm.njk"%}
+                <input 
+                        type="hidden" 
+                        name="id" 
+                        value="{{chef.id}}"> 
+        </form>
+    </main>
         
 {% endblock %}

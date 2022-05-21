@@ -1,3 +1,6 @@
+:root {
+    --secondary-color: #6558C3;
+}
 * {
     margin: 0;
     padding: 0;
@@ -34,13 +37,24 @@ header .menu a.bold {
     font-weight: bold;
     color: #FFFFFF;
 }
-.main-content,
-.main-show-recipe,
-.show-section-recipe,
-.recipes-box{
-    width: 100%;
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+
     max-width: 940px;
-    margin: 0 230px;
+}
+
+.photosDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 8px;
+    max-height: 149px;
+
 }
 
 .main-text h1 {
@@ -80,7 +94,7 @@ header .menu a.bold {
 }
 .recipe-content a,
 .chefs .content-chef div a{
-    color: #6558C3;
+    color: var( --secondary-color);;
     font: 14px 'Roboto', sans-serif;
     font-weight: bold;
     text-decoration: none;
@@ -105,7 +119,7 @@ header .menu a.bold {
 .main-text-form button{
     width:139px;
     height: 37px;
-    background-color: #6558C3;
+    background-color: var( --secondary-color);
     outline: none;
     border-radius: 4px;
     border: none;
@@ -170,7 +184,7 @@ select {
     margin-top: 5px;
     font: bold 16px 'Roboto', sans-serif;
     line-height:19px;
-    color: #6558C3;
+    color: var( --secondary-color);
     background: none;
     border: none;
 }
@@ -183,6 +197,7 @@ select {
 .items div.item div {
     margin-bottom: 15px;
 }
+
 .items div.item div > button {
     margin-bottom: 30px;
 }
@@ -202,7 +217,7 @@ select {
 .show-title-recipe a.button {
     width:136px;
     height: 37px;
-    background-color: #6558C3;
+    background-color: var( --secondary-color);;
     border-radius: 4px;
     padding: 9px 20px;
 
@@ -335,3 +350,109 @@ select {
 .recipes-box .recipes {
     margin: 0;
 }
+
+/*photos chef*/
+
+form  .item #photo-chef-upload {
+    position: relative;
+
+    display:block;
+    overflow: hidden;
+    width:139px;
+}
+
+
+form  .item #photo-chef-upload p {
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px -6px;
+    color: white;
+    background-color: var(--secondary-color);
+
+    width: 100%;
+    text-align: center;
+    
+    
+}
+
+form .item #photo-input-chef,
+form .item #photos-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*------- Photos Upload Recipes --------*/
+
+form .item #photos-upload {
+    position: relative;
+    display:block;
+    overflow: hidden;
+    width:149px;
+    height: 149px;
+    margin:0;
+}
+form  .item #photos-upload i{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 3.5px;
+    border: 1px solid #DDDDDD; 
+
+    font-size: 28px;
+    color: #999999;
+
+}
+
+form .item #photos-preview {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    margin: 0;
+}
+form .item #photos-preview img {
+    width: 149px;
+    height: 149px;
+    
+    object-fit: cover;;
+}
+
+#photos-preview .photo {
+    position: relative;
+}
+
+#photos-preview .photo i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: red;
+    background: rgba(255, 255, 255, 0.8);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    transition: opacity 200ms;
+
+    opacity:  0;
+}
+#photos-preview .photo:hover i {
+    opacity: 1;
+}
+

@@ -1,13 +1,13 @@
 {% extends "layoutAdmin.njk" %}
     {% block content %}
-    <main class="main-content">
+    <main class="container main-content">
         <div class="main-text-form">
             <h1>Criando chef</h1>
-            <button form="form-create"type="submit">Salvar chef</button>
+            <button fclass="buttons" form="form-create"type="submit">Salvar chef</button>
         </div>
+        <form  id="form-create" method="post" action="/admin/chefs">
+                {%include "admin/chefs/fields.njk"%}
+        </form>
     </main>
-   <form class="form" id="form-create" method="post" action="/admin/chefs">
-        {%include "admin/chefs/fields.njk"%}
-   </form>
         
 {% endblock %}
