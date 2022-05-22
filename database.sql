@@ -3,16 +3,18 @@ CREATE TABLE "recipes" (
   "title" text,
   "chef_id" int,
   "ingredients" text[],
-  "preparation" test[],
+  "preparation" text[],
   "information" text,
-  "created_at" datetime,
-  "updated_at" datetime
-);
+  "created_at" timestamp with time zone,
+  "updated_at" timestamp with time zone
+)
 
 CREATE TABLE "chefs" (
   "id" SERIAL PRIMARY KEY,
   "name" text,
-  "file_id" int
+  "file_id" int,
+  "created_at" timestamp with time zone,
+  "updated_at" timestamp with time zone
 );
 
 CREATE TABLE "files" (
@@ -31,6 +33,6 @@ ALTER TABLE "recipes" ADD FOREIGN KEY ("chef_id") REFERENCES "chefs" ("id");
 
 ALTER TABLE "recipe_files" ADD FOREIGN KEY ("recipe_id") REFERENCES "recipes" ("id");
 
-ALTER TABLE "files" ADD FOREIGN KEY ("id") REFERENCES "recipe_files" ("file_id");
+ALTER TABLE "recipe_files" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");
 
-ALTER TABLE "files" ADD FOREIGN KEY ("id") REFERENCES "chefs" ("file_id");
+ALTER TABLE "chefs" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");

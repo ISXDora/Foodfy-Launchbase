@@ -2,12 +2,13 @@ const Recipe = require("../../models/admin/Recipe")
 const Chef = require("../../models/admin/Chef")
 
 module.exports = {
-    mostAccessed(req, res){
-        Recipe.all(function(recipes){
-            return res.render('website/index', { recipes})
-        })
+    async mostAccessed(req, res){
+        let results = await Recipe.all();
+        const recipes = results.rows
+        return res.render('website/index', { recipes})
     },
-    index(req, res){
+    async index(req, res){
+        try {
             let {page, limit} = req.params
 
             page = page || 1
@@ -26,35 +27,39 @@ module.exports = {
                 }
             }
 
-            Recipe.paginate(params)
+            await Recipe.paginate(params)
+        } catch (error) {
+            throw new Error(err)
+        }
+            
     },
-    about(req,res){
+    async about(req,res){
         return res.render('website/about')
     },
-    indexChefs(req, res){
-        Chef.all(function(chefs){
+    async indexChefs(req, res){
 
-            return res.render('website/chefs', {chefs})
-        })
+        let results = await Chef.all()
+        const chefs =  results.rows
+        return res.render('website/chefs', {chefs})
     },
-    show(req, res){
-        Recipe.find(req.params.id, function(recipe){
+    async show(req, res){
+        let results = await Recipe.find(req.params.id)
+        const recipe = results.rows[0]
             if(!recipe) return res.send("Recipe not found!")
 
             return res.render("website/show", {recipe} )
-        })
     },
-    search(req, res){
-            const { filter } = req.query 
+    async search(req, res){
+            const { filter } = await req.query 
 
             if ( filter ) {
-            Recipe.findBy( filter, function(recipes){
+            await Recipe.findBy( filter, function(recipes){
                 return res.render("website/search", {recipes, filter} )
                })
              }else {
-                 Recipe.all(function(recipes){
+                 let results = await Recipe.all()
+                 const recipes = results.rows
                     return res.render("website/search", {recipes} )
-                })
     
              }
     }
