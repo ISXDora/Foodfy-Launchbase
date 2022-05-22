@@ -5,7 +5,7 @@
             <h1>Criando chef</h1>
             <button fclass="buttons" form="form-create"type="submit">Salvar chef</button>
         </div>
-        <form  id="form-create" method="post" action="/admin/chefs">
+        <form  id="form-create" method="post" action="/admin/chefs" enctype="multipart/form-data">
                 {%include "admin/chefs/fields.njk"%}
         </form>
     </main>

@@ -8,7 +8,7 @@
             <button form="form-edit"type="submit">Salvar chef</button>
             </div>
         </div>
-        <form class="form" id="form-edit" method="post" action="/admin/chefs?_method=PUT">
+        <form class="form" id="form-edit" method="post" action="/admin/chefs?_method=PUT" enctype="multipart/form-data">
                 {%include "admin/chefs/fields.njk"%}
                 <input 
                         type="hidden" 
