@@ -69,8 +69,8 @@
             />
         </div>
         {%else%}
-        <div class="ingredient">
         {% for item in recipe.ingredients%}
+        <div class="ingredient">
             <input
                 type="text"
                 name="ingredients"
@@ -78,8 +78,8 @@
                 value="{{item}}"
                    
             />
-        {% endfor%}
         </div>
+        {% endfor%}
         {%endif%}
         </div>
         <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
@@ -96,16 +96,16 @@
             />
         </div>
         {%else%}
-        <div class="preparation">
         {% for item in recipe.preparation%}
+        <div class="preparation">
             <input
                 type="text"
                 name="preparation"
                 value="{{item}}"
                    
             />
-        {% endfor%}
         </div>
+        {% endfor%}
         {%endif%}
         </div>
         <button type="button" class="add-preparation">Adicionar novo passo</button>              
@@ -114,11 +114,7 @@
     <div class="item">
         <div >Informações Adicionais</div>
         <div>
-            <textarea
-                type="text"
-                name="information"
-            >{{recipe.information}}
-            </textarea>
+            <textarea type="text" name="information">{{recipe.information}}</textarea>
         </div>
         
     </div>

@@ -1,6 +1,6 @@
 {% extends "layoutAdmin.njk" %}
     {% block content %}
-    <main class="main-content">
+    <main class="container main-content">
         <div class="main-text-form">
             <h1>Editando receita</h1>
             <div class="buttons">
@@ -8,22 +8,22 @@
             <button form="form-edit"type="submit">Salvar receita</button>
             </div>
         </div>
-    </main>
-   <form class="form" id="form-edit" method="post" action="/admin/recipes?_method=PUT" enctype="multipart/form-data">
-        {%include "admin/recipes/fields.njk"%}
-        {%include "admin/recipes/scripts.njk"%}
-        <input 
-                type="hidden" 
-                name="id" 
-                value="{{recipe.id}}"> 
-   </form>
+        <form id="form-edit" method="post" action="/admin/recipes?_method=PUT" enctype="multipart/form-data">
+                {%include "admin/recipes/fields.njk"%}
+                {%include "admin/recipes/scripts.njk"%}
+                <input 
+                        type="hidden" 
+                        name="id" 
+                        value="{{recipe.id}}"> 
+        </form>
 
-   <form class="form" id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
-        {%include "admin/recipes/confirm.njk"%}
-        <input 
-                type="hidden" 
-                name="id" 
-                value="{{recipe.id}}"> 
-   </form>
+        <form id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
+                {%include "admin/recipes/confirm.njk"%}
+                <input 
+                        type="hidden" 
+                        name="id" 
+                        value="{{recipe.id}}"> 
+        </form>
+    </main>
         
 {% endblock %}

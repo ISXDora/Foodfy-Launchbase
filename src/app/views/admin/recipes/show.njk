@@ -1,7 +1,7 @@
 {% extends "layoutAdmin.njk" %}
 
 {% block content %}
-<main class="main-show-recipe">
+<main class="container main-show-recipe">
   <div class="show-title-recipe">
       <h1>Receita: {{recipe.title}}</h1>
       <a class="button"href="/admin/recipes/{{recipe.id}}/edit" >Editar receita</a>
@@ -12,7 +12,7 @@
       <p>Por {{recipe.chef_name}}</p>
   </div>
 </main>
-<section class="show-section-recipe">
+<section class="container show-section-recipe">
   <div class="content-show-details">
     <div class="details-title-content">
       <h4 class="recipe-title">Ingredientes</h4>
