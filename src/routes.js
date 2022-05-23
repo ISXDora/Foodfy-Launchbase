@@ -33,8 +33,8 @@ routes.get('/recipes/:id', data.show)
  routes.get("/admin/chefs/create", chefs.create); // Mostrar formulário de nova receita
  routes.get("/admin/chefs/:id", chefs.show); // Exibir detalhes de uma receita
  routes.get("/admin/chefs/:id/edit", chefs.edit); // Mostrar formulário de edição de receita
- routes.post("/admin/chefs", multer.single("photo-chefs"),chefs.post); // Cadastrar nova receita
- routes.put("/admin/chefs", multer.array("photos",5),chefs.put); // Editar uma receita
+ routes.post("/admin/chefs", multer.array("avatar",1),chefs.post); // Cadastrar nova receita
+ routes.put("/admin/chefs", multer.array("avatar",1),chefs.put); // Editar uma receita
  routes.delete("/admin/chefs", chefs.delete);
 
  module.exports = routes

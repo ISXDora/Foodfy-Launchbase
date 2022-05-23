@@ -1,4 +1,7 @@
 const Chef = require('../../models/admin/Chef')
+const RecipeFile = require('../../models/admin/RecipeFile')
+const File = require('../../models/admin/File')
+const object = require('nunjucks/src/object')
 
 module.exports = {
     async index(req, res){
@@ -23,13 +26,22 @@ module.exports = {
                 return res.send("Por vafor, preencha todos os campos!")
             }
         }
-
-        let results = await Chef.create(req.body)
-
-        const chefId = results.rows[0].id
-
         
-            return res.redirect(`/admin/chefs/${chefId}`)
+    const file = req.files
+    let results = await File.create({
+        filename: file[0].filename,
+        path: file[0].path
+    })
+    const fileId = results.rows[0].id
+
+    results = await Chef.create({
+        name: req.body.name,
+        files_id: fileId
+    })
+    const chefId = results.rows[0].id
+
+    return res.redirect(`/admin/chefs/${chefId}`)
+   
     },
     async show(req, res){
         let results = await Chef.find(req.params.id)

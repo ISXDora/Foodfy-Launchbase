@@ -132,12 +132,6 @@ body {
 
 /*----------------------------------------- FORM /FIELDS -----------------------------------------*/
 
-.form {
-    width: 100%;
-    max-width: 940px;
-    margin: 0 230px;
-}
-
 .items {
     width: 100%;
     font: bold 16px 'Roboto', sans-serif;
@@ -169,6 +163,11 @@ select {
 .item div:nth-child(1){
     margin-bottom: 10px;
 }
+.tem div#ingredients div,
+.ingredient,
+.preparation {
+    margin-top: 10px;
+}
 .item div:nth-child(2) input::placeholder
  {
     font-size: 16px;
@@ -188,14 +187,8 @@ select {
     background: none;
     border: none;
 }
-.item #ingredients .ingredient,
-.item #preparations .preparation,
-.item div div.ingredient,
-.item div div.preparation{
-    margin-top: 10px;
-}
 .items div.item div {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .items div.item div > button {
@@ -363,6 +356,7 @@ form  .item #photo-chef-upload {
 
 
 form  .item #photo-chef-upload p {
+
     padding: 8px 16px;
     border-radius: 4px;
     box-shadow: 0 2px 2px -6px;
@@ -371,6 +365,8 @@ form  .item #photo-chef-upload p {
 
     width: 100%;
     text-align: center;
+
+    opacity: 1;
     
     
 }
@@ -386,6 +382,8 @@ form .item #photos-input {
     width: 100%;
     height: 100%;
     opacity: 0;
+
+    transition: opacity 200ms;
     cursor: pointer;
 }
 
