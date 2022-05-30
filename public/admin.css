@@ -345,8 +345,7 @@ select {
 }
 
 /*photos chef*/
-
-form  .item #photo-chef-upload {
+form  .item #photo-chef-upload{
     position: relative;
 
     display:block;
@@ -354,21 +353,8 @@ form  .item #photo-chef-upload {
     width:139px;
 }
 
-
-form  .item #photo-chef-upload p {
-
-    padding: 8px 16px;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px -6px;
-    color: white;
-    background-color: var(--secondary-color);
-
-    width: 100%;
-    text-align: center;
-
-    opacity: 1;
-    
-    
+form .item #photo-preview-chef .photo {
+    width: 940px;
 }
 
 form .item #photo-input-chef,
@@ -386,6 +372,21 @@ form .item #photos-input {
     transition: opacity 200ms;
     cursor: pointer;
 }
+form  .item #photo-chef-upload p,
+form .item #photo-preview-chef p  {
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px -6px;
+    color: white;
+    background-color: var(--secondary-color);
+    text-align: center;
+    text-align: center;
+    width: 149px;
+    opacity: 1;
+    
+    
+}
+
 
 /*------- Photos Upload Recipes --------*/
 

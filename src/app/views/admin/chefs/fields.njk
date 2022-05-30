@@ -14,16 +14,28 @@
     <div class="item">
         <div>Avatar</div>
             
+        {% if not chef.file_id %}
         <div id="photo-chef-upload">
-            
                 <input
                     id="photo-input-chef"
                     type="file"
                     accept="image/*"
                     name="avatar"
+                    value="{{file.id.chefs.id}}"
                     onChange="PhotoUploadChef.handleFileInput(event)"
                 >
             <p>Enviar Avatar</p>
         </div>
+        {% else %}
+        <div id="photo-preview-chef">
+        <div class="photo" id="{{chef.file_id}}">
+        <input
+            value="{{file.path}}"
+        >
+        </div>
+        <p>Enviar Avatar</p>       
+        </div>
+        {%endif%}
     </div>
 </div>
+
